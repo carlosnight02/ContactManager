@@ -14,7 +14,7 @@ const reducer = (state, action) => {
         return {
             ...state,
             contacts: [action.payload, ...state.contacts]
-        
+  
         }
         default:
             return state;
