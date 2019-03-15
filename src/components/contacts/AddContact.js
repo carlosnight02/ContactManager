@@ -14,7 +14,7 @@ class AddContact extends Component {
     onSubmit = (dispatch,e) => {
         e.preventDefault();
         //console.log(this.state);
-        const {name, mail, phone} = this.state;
+        const {name, email, phone} = this.state;
 
         // Check For Errors
         if(name ===''){
@@ -22,7 +22,7 @@ class AddContact extends Component {
             return;
         }
         
-        if(mail === ''){
+        if(email === ''){
             this.setState({errors:{email: 'Email is required'}});
             return;
         }
@@ -35,7 +35,7 @@ class AddContact extends Component {
         const newContact = {
             id:uuid(),
             name,
-            mail,
+            email,
             phone
         }
         dispatch({type: 'ADD_CONTACT', payload: newContact});
@@ -76,7 +76,7 @@ class AddContact extends Component {
                                     placeholder="Enter Email.."
                                     value= {email}
                                     onChange= {this.onChange}
-                                    error={errors.mail}
+                                    error={errors.email}
                                 />
                                 <TextInputGroup
                                     label="Phone"
