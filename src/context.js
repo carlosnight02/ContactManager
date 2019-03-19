@@ -27,8 +27,9 @@ export class Provider extends Component {
          dispatch: action =>  this.setState(state=> reducer(state, action))
     };
 
+    /*Await espera  que la consulta sea finalizada y luego pone el resultado en la variable res*/
     async componentDidMount() {
-        const res= axios.get('https://jsonplaceholder.typicode.com/users');
+        const res= await axios.get('https://jsonplaceholder.typicode.com/users');
         this.setState({contacts: res.data});  
     }
     
