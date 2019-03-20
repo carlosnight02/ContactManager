@@ -16,11 +16,11 @@ import { Consumer } from '../../context'
                             <span className="text-danger">Contact</span> List
                         </h1>
                         {contacts.map(contact => (
-                        <Contact  
+                            <Contact  
                                 key={contact.id}
                                 contact = {contact}                               
-                        />
-                    ))}
+                            />
+                        ))}
                     </React.Fragment>
                 )
             }} 
